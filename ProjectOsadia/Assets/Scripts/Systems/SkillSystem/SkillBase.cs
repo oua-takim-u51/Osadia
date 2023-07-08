@@ -40,9 +40,9 @@ public class SkillBase
         unlockedSkillsList = new List<SkillType>();
     }
 
-    public void AddSkillPoint()
+    public void AddSkillPoint(int points)
     {
-        skillPoints++;
+        skillPoints += points;
         OnSkillPointsChanged?.Invoke(this, EventArgs.Empty);
     }
 
@@ -56,7 +56,7 @@ public class SkillBase
         switch (skillType)
         {
             //Canýn skill tree'deki requirement'larý
-            case SkillType.HealthMax_2: return SkillType.HealthMax_1;
+            case SkillType.HealthMax_2: return SkillType.HealthMax_1; 
             case SkillType.HealthMax_3: return SkillType.HealthMax_2;
             //Hýzýn " " " " "
             case SkillType.Speed_2: return SkillType.Speed_1;
@@ -107,16 +107,9 @@ public class SkillBase
                 UnlockSkill(skillType);
                 return true;
             }
-            else
-            {
-                return false;
-            }
+            else return false;   
         }
-        else
-        {
-            return false;
-        }
+        else return false;
     }
-
 }
 

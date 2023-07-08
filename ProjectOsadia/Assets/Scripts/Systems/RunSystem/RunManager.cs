@@ -1,54 +1,60 @@
+using System;
 using UnityEngine;
 
 public class RunManager : MonoBehaviour
 {
-    [Header("RUN DATA")]
+    //Run manager deðiþkenleri
+    public static RunManager current;
     public static bool isOnRun;
-    public delegate void isRunning();
-    public static event isRunning OnRunning;
-    public static event isRunning OnDamaged;
-    public static event isRunning OnHealed;
-    public static event isRunning OnShowHealth;
+    public static event EventHandler OnRunStart;
+    public static event EventHandler OnRunEnd;
+    //
 
-    //bu metodda baya if var, ama büyük çoðunluðu button çalýþmasý için...
-    private void OnGUI()
+    //Run için diðer deðiþkenler
+    private HealthSystem healthSystem;
+
+    [SerializeField]private GameObject player;
+    
+
+    private void Awake()
     {
-        if (isOnRun)
+        current=this;
+    }
+    /*Run'da neler oluyor?
+     * Oyuncunun verdiði kararlara sistem karþýlýk veriyor. (ör: abusu adam kýzýyor)
+     * Oyuncun yaptýðý þeyler kaydediliyor: geçirilen vakit,kill, ateþ, harcama, can toplama, en çok hasar alýnan düþman, puan vs.
+     * Oyuncunun hamlelerine göre düþmanlar spawnlanýyor!!
+     * Oyunun durumuna göre run baþlýyor ve bitiyor. Bitiþ için 3 durum: Oyuncu ölmesi, Son boss'un ölmesi, Tekneyle kaçýþ...
+     * Oyuncunun ölmesi durumunda konumunu baþlangýca geri taþýyor.
+     * Gameanalytics ile etkileþime geçebilir.
+     * vs.
+     */
+
+    public void RunStart()
+    {
+        if (OnRunStart != null)
         {
-            if (GUI.Button(new Rect(Screen.width / 2 - 50, 5, 100, 30), "Caný Azalt"))
-            {
-                if (RunManager.OnRunning != null && !RunEnder.isDead)
-                {
-                    OnDamaged();
-                }
-            }
-
-            if (GUI.Button(new Rect(Screen.width / 2 - 50, 35, 100, 30), "Caný Arttýr"))
-            {
-                if (RunManager.OnRunning != null)
-                {
-                    OnHealed();
-                }
-            }
-
-            if (GUI.Button(new Rect(Screen.width / 2 - 50, 95, 100, 30), "Caný Göster"))
-            {
-                if (RunManager.OnRunning != null)
-                {
-                    OnShowHealth();
-                }
-            }
-
-            if (GUI.Button(new Rect(Screen.width / 2 - 50, 65, 100, 30), "Run'ý baþlat"))
-            {
-                if (RunManager.OnRunning != null)
-                {
-                    OnRunning();
-                }
-            }
-
+            OnRunStart(this, EventArgs.Empty);
         }
+    }
+    public void RunEnd()
+    {
+        if(OnRunEnd != null)
+        {
+            OnRunEnd(this, EventArgs.Empty);
+        }
+    }
+
+    public void HandleRun()
+    {
+        
+    }
+
+    void LogRun()
+    {
 
     }
-       
+
+
+        
 }

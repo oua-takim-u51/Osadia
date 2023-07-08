@@ -1,31 +1,39 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class RunStarter : MonoBehaviour
 {
-    public Transform startPoint;
+    [SerializeField] Transform startPoint;
+    [SerializeField] Transform playerTransform;
     private Vector3 startPosition;
-    public Transform playerTransform;
     private void Awake()
     {
-        RunManager.isOnRun = true;
-        RunEnder.isDead = false;
-        RunManager.OnRunning += StartRun;
+        RunManager.OnRunStart += StartRun;
     }
 
     private void Start()
     {
-       startPosition = startPoint.position;
+       //startPosition = startPoint.position;
     }
 
-    private void StartRun()
+    public void StartRun(object sender, EventArgs e)
     {
+        Debug.Log(playerTransform);
+        Debug.Log(startPoint);
+        Debug.Log(playerTransform.position);
+        Debug.Log(startPoint.position);
+        if (!RunManager.isOnRun)
+            RunManager.isOnRun = true;
+
         if (playerTransform != null && startPoint != null)
-        { 
-            playerTransform.localPosition = new Vector3(startPosition.x, startPosition.y, startPosition.z);
+        {
+            playerTransform.position = startPoint.position;
             Debug.Log("Run Baþladý" + RunManager.isOnRun);
+            Debug.Log("2 "+playerTransform.position);
+            Debug.Log("2 "+startPoint.position);
         }
-           
+        RunManager.OnRunStart -= StartRun;
     }
 }

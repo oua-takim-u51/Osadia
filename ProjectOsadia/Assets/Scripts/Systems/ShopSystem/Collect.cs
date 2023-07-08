@@ -4,13 +4,15 @@ using UnityEngine;
 
 public class Collect : MonoBehaviour
 {
-    private void OnCollisionEnter(Collision collision)
+    //basit collect mantýðý
+    private void OnTriggerEnter(Collider other)
     {
-        Debug.Log(collision.gameObject);
-        if (collision != null && collision.collider.CompareTag("Arcadium"))
+        Debug.Log(other.gameObject);
+        if (other != null && other.GetComponent<Collider>().CompareTag("Arcadium"))
         {
-            PlayerData.arcadiumCount++;
-            Destroy(collision.gameObject);
+            FindObjectOfType<SkillManager>().GetSkillBase().AddSkillPoint(1);
+            Debug.Log(FindObjectOfType<SkillManager>().GetSkillBase().GetSkillPoints());
+            Destroy(other.gameObject);
         }
     }
 }

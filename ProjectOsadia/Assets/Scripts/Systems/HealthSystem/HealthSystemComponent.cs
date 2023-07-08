@@ -1,5 +1,4 @@
-﻿
-using UnityEngine;
+﻿using UnityEngine;
 
 public class HealthSystemComponent : MonoBehaviour, IGetHealthSystem
 {
@@ -26,8 +25,6 @@ public class HealthSystemComponent : MonoBehaviour, IGetHealthSystem
         
         public HealthSystem GetHealthSystem()
         {
-            return healthSystem;
+            return this.healthSystem;
         }
-
-
-    }
+}
