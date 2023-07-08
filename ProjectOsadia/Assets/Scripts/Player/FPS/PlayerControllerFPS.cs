@@ -6,12 +6,13 @@ public class PlayerControllerFPS : MonoBehaviour
 {
     [Header("PlayerController")]
     [SerializeField] public Transform Camera;
-    [SerializeField, Range(1, 10)] float walkingSpeed = 6.0f;
+    [SerializeField, Range(1, 10)] public float walkingSpeed = 6.0f;
     [Range(0.1f, 5)] public float CrouchSpeed = 3.0f;
-    [SerializeField, Range(2, 20)] float RuningSpeed = 9.0f;
-    [SerializeField, Range(0, 20)] float jumpSpeed = 7.0f;
+    [SerializeField, Range(2, 20)] public float RuningSpeed = 9.0f;
+    [SerializeField, Range(0, 20)] public float jumpSpeed = 7.0f;
     [SerializeField, Range(0.5f, 10)] float lookSpeed = 2.0f;
-    [SerializeField, Range(10, 120)] float lookXLimit = 90.0f;
+    [SerializeField, Range(10, 90)] float lookXLimit = 90.0f;
+    float currentSpeed;
     
     [Space(20)]
     [Header("Advance")]
@@ -22,6 +23,7 @@ public class PlayerControllerFPS : MonoBehaviour
     [SerializeField] float timeToRunning = 2.0f;
     [HideInInspector] public bool canMove = true;
     [HideInInspector] public bool CanRunning = true;
+    float currentFOV;
 
     [Space(20)]
     [Header("WallRunning")]
@@ -42,7 +44,6 @@ public class PlayerControllerFPS : MonoBehaviour
     
     [HideInInspector] public bool isRunning = false;
     
-    Vector3 InstallCameraMovement;
     float InstallFOV;
     Camera cam;
     
@@ -53,8 +54,6 @@ public class PlayerControllerFPS : MonoBehaviour
     [HideInInspector] public float Lookhorizontal;
     
     float RunningValue;
-    float installGravity;
-    bool WallDistance;
     
     [HideInInspector] public float WalkingValue;
     
@@ -65,10 +64,8 @@ public class PlayerControllerFPS : MonoBehaviour
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
         InstallCrouchHeight = characterController.height;
-        InstallCameraMovement = Camera.localPosition;
         InstallFOV = cam.fieldOfView;
         RunningValue = RuningSpeed;
-        installGravity = gravity;
         WalkingValue = walkingSpeed;
     }
 
