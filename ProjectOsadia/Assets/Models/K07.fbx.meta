@@ -3,7 +3,27 @@ guid: ef48387ccf6eec74593c49595c102147
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Drone
+    second: {fileID: 2100000, guid: 4cc481c8b8f5f8745843b4c8e52f70b7, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_Lens
+    second: {fileID: 2100000, guid: f29cb7908de21c34a96450efad3eed69, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Mat_PlasmaTurbine
+    second: {fileID: 2100000, guid: 78fdbdaad5b6f5c4094012025c59e4fe, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Solid Glass
+    second: {fileID: 2100000, guid: e6c06b2d0112a72428710f17eaca79a9, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

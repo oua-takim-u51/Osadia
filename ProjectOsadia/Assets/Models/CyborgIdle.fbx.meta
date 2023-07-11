@@ -3,7 +3,37 @@ guid: 4774b89663510c94b8418e1b0691aac2
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Body
+    second: {fileID: 2100000, guid: 0eb9e992163da564ab80226837f31fcc, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GUN
+    second: {fileID: 2100000, guid: 31ca6960a15bfdf45b0c1309ee2318cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GUN.001
+    second: {fileID: 2100000, guid: 31ca6960a15bfdf45b0c1309ee2318cb, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head
+    second: {fileID: 2100000, guid: 4553d0406d22fb94d9bfea0c679cdb66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Head.001
+    second: {fileID: 2100000, guid: 4553d0406d22fb94d9bfea0c679cdb66, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Secondary
+    second: {fileID: 2100000, guid: aaaebaa057324ed44a900e22da13cb4f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

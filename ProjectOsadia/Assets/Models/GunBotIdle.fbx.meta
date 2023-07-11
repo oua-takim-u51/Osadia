@@ -3,7 +3,22 @@ guid: efba95d1cc7b4954588534a7c422f78c
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Grass
+    second: {fileID: 2100000, guid: c0ebcef8614440e4f8b156d7e1f4d5d3, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spder bot
+    second: {fileID: 2100000, guid: e77bbcbe5484d694b87574a445b838ca, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Spder bot_Black
+    second: {fileID: 2100000, guid: b4c15ec0b5c09c84ea55b5471c4c91c2, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
