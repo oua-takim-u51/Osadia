@@ -118,19 +118,28 @@ Sprint Review katılımcıları: Tüm takım.
 
 # Sprint 3
 
-- **Sprint içinde tamamlanması tahmin edilen puan**: 
+- **Sprint içinde tamamlanması tahmin edilen puan**: 340
+- **Puan tamamlama mantığı**: İdeal şartlar altında 600 puan üzerinden değerlendirilecek Backlog 200'er puandan üç eşit parçaya bölünmüştür fakat gerek proje durumu ve içinde bulunduğumuz kısıtlı zaman sebebiyle görevler şartlara göre düzenlenmiştir.
+- **Sprint Notu**: Zaman konusunda karşımıza çıkan ekstra ve öngörülemeyen sorunlar sebebiyle hedeflenen sonuca ulaşılamamış ve ürünün tamamlanabilmesi için proje üzerinde değişiklikler uygulanmıştır.
 
-- **Daily Scrum**: 
-- **Sprint board update**: 
+- **Daily Scrum**: Süreç içerisinde yer yer sesli, yer yer yazı dili üzerinden günlük scrum yapılmıştır. Ekte ekran görüntüleri...
+- Ek: ![Screenshot 1](https://github.com/oua-takim-u51/Osadia/blob/main/ProjectManagement/Sprint3Documents/Ekran%20görüntüsü%202023-07-17%20164536.png)
 
+- **Sprint board update**: Ekran görüntüleri:
+- ![Screenshot](https://github.com/oua-takim-u51/Osadia/blob/main/ProjectManagement/Sprint3Documents/Ekran%20görüntüsü%202023-07-17%20164710.png)
+- **Ürün Durumu**: Ekran görüntüsü:  ![Screenshot](https://github.com/oua-takim-u51/Osadia/blob/main/ProjectManagement/Sprint3Documents/Ekran%20görüntüsü%202023-07-17%20162919.png)
+  
+- **Sprint Review**: Sınav dönemi ve bayram dönemi biriken işler sebebiyle son sprint üzerinde fazla yığılma gerçekleştiğinden ürünün ilk gün planlandığı kadar kapsamlı geliştirilemeyeceği ortaya çıkmış ve bu durum üzerine proje düzenlenmiştir. Yapılan sistemlerin en kısa süre içerisinde birleştirilip sunulmasında karar kılınmıştır.
 
-- **Ürün Durumu**: 
+- **Sprint Retrospective**:  Eldeki ürünün parça parça hazır olduğu ve kısa süre içinde ürünün toparlanıp teslime hazır hale getirilmesine karar kılınmıştır.
 
+---
 
-- **Sprint Review**: 
+## Product Backlog URL
 
-
-- **Sprint Retrospective:**
+-Not: Ekran fotoğrafı ve link olarak paylaşıldı.
+[Unity Team 51 Asana](https://app.asana.com/0/1204793570183217/board)
+![Screenshot](https://github.com/oua-takim-u51/Osadia/blob/main/ProjectManagement/Sprint3Documents/Ekran%20görüntüsü%202023-07-17%20165611.png)
 
 
 
