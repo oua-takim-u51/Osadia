@@ -16,6 +16,7 @@ public class NpsMove : MonoBehaviour
     public float timeBetweenAttacks;
     private bool alreadyAttacked;
     public GameObject sphere;
+    private Animator _anim;
 
     public float sightRange, attackRange;
     public bool playerInSightRange, playerInAttackRange;
@@ -32,6 +33,7 @@ public class NpsMove : MonoBehaviour
     private void Awake()
     {
         _agent = GetComponent<NavMeshAgent>();
+        _anim = GetComponent<Animator>();
     }
 
     private void Update()
@@ -44,6 +46,7 @@ public class NpsMove : MonoBehaviour
             case NpsState.Patrol:
                 if (!playerInSightRange && !playerInAttackRange)
                 {
+                    _anim.SetBool("idle", true);
                     Patroling();
                 }
                 else if (playerInSightRange && !playerInAttackRange)
@@ -67,6 +70,8 @@ public class NpsMove : MonoBehaviour
                 }
                 else
                 {
+
+                    _anim.SetBool("idle", false);
                     ChasePlayer();
                 }
                 break;
@@ -82,6 +87,8 @@ public class NpsMove : MonoBehaviour
                 }
                 else
                 {
+
+                    _anim.SetBool("idle", false);
                     AttackPlayer();
                 }
                 break;

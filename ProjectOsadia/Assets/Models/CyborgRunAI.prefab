@@ -2368,13 +2368,14 @@ GameObject:
   - component: {fileID: 8452449782634464442}
   - component: {fileID: 6909229133035101638}
   - component: {fileID: 1002535443468199903}
+  - component: {fileID: 3848421761392164862}
   m_Layer: 0
   m_Name: CyborgRunAI
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &8485029456037408686
 Transform:
   m_ObjectHideFlags: 0
@@ -2397,7 +2398,7 @@ Transform:
   - {fileID: 9108136111527439009}
   - {fileID: 6795858014693652383}
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!54 &8452449782634464442
 Rigidbody:
@@ -2476,6 +2477,27 @@ MonoBehaviour:
   attackRange: 2
   playerInSightRange: 0
   playerInAttackRange: 0
+--- !u!95 &3848421761392164862
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6441467383153437275}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: e74fb754f80303545b4992f1366c66fe, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &6456966557040541333
 GameObject:
   m_ObjectHideFlags: 0
