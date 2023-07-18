@@ -19,16 +19,21 @@ public class RunManager : MonoBehaviour
     private void Awake()
     {
         current=this;
+        Shootable.OnShootableDead += OnShootableEnemyDied;
+        OnRunEnd += RunManager_OnRunEnd;
     }
+
+    
+
     /*Run'da neler oluyor?
-     * Oyuncunun verdiði kararlara sistem karþýlýk veriyor. (ör: abusu adam kýzýyor)
-     * Oyuncun yaptýðý þeyler kaydediliyor: geçirilen vakit,kill, ateþ, harcama, can toplama, en çok hasar alýnan düþman, puan vs.
-     * Oyuncunun hamlelerine göre düþmanlar spawnlanýyor!!
-     * Oyunun durumuna göre run baþlýyor ve bitiyor. Bitiþ için 3 durum: Oyuncu ölmesi, Son boss'un ölmesi, Tekneyle kaçýþ...
-     * Oyuncunun ölmesi durumunda konumunu baþlangýca geri taþýyor.
-     * Gameanalytics ile etkileþime geçebilir.
-     * vs.
-     */
+* Oyuncunun verdiði kararlara sistem karþýlýk veriyor. (ör: abusu adam kýzýyor)
+* Oyuncun yaptýðý þeyler kaydediliyor: geçirilen vakit,kill, ateþ, harcama, can toplama, en çok hasar alýnan düþman, puan vs.
+* Oyuncunun hamlelerine göre düþmanlar spawnlanýyor!!
+* Oyunun durumuna göre run baþlýyor ve bitiyor. Bitiþ için 3 durum: Oyuncu ölmesi, Son boss'un ölmesi, Tekneyle kaçýþ...
+* Oyuncunun ölmesi durumunda konumunu baþlangýca geri taþýyor.
+* Gameanalytics ile etkileþime geçebilir.
+* vs.
+*/
 
     public void RunStart()
     {
@@ -52,9 +57,16 @@ public class RunManager : MonoBehaviour
 
     void LogRun()
     {
-
+        int score = Points.GetPoints();
+    }
+    private void RunManager_OnRunEnd(object sender, EventArgs e)
+    {
+        LogRun();
     }
 
-
-        
+    private void OnShootableEnemyDied(object sender, EventArgs e)
+    {
+        Debug.Log(sender);
+        Points.enemiesKilled++;
+    }
 }
